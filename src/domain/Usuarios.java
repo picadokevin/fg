@@ -18,7 +18,7 @@ public abstract class Usuarios {
         this.contraseña = contraseña;
         this.nombreCompleto=nombreCompleto;
         this.tipoID=tipoID;
-        this.Identificacion=Identificacion;
+        this.Identificacion= Identificacion;
     	
     	
     }
