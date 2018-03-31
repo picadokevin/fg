@@ -14,6 +14,10 @@ import domain.Usuarios;
  */
 public class Usuario extends Usuarios
  {
+
+    public Usuario(String unicoNombre, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion) {
+        super(unicoNombre, contraseña, nombreCompleto, tipoIdentificacion, identificacion);
+    }
 	/**
 	 * 
 	 */

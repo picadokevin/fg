@@ -14,6 +14,11 @@ import domain.Usuarios;
  */
 public class Autores extends Usuarios
  {
+
+    public Autores(String unicoNombre, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion) {
+        super(unicoNombre, contraseña, nombreCompleto, tipoIdentificacion, identificacion);
+    }
+
 	/**
 	 * 
 	 */

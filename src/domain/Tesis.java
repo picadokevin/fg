@@ -19,4 +19,26 @@ public class Tesis extends Catalogo {
 	 * 
 	 */
 	private String Abstract;
+
+    public Tesis(String titulo, String fechaIngreso, Autores Autor,String Resumen,String Abstract) {
+        super(titulo, fechaIngreso, Autor);
+        this.Resumen=Resumen;
+        this.Abstract=Abstract;
+    }
+
+    public String getResumen() {
+        return Resumen;
+    }
+
+    public void setResumen(String Resumen) {
+        this.Resumen = Resumen;
+    }
+
+    public String getAbstract() {
+        return Abstract;
+    }
+
+    public void setAbstract(String Abstract) {
+        this.Abstract = Abstract;
+    }
 };

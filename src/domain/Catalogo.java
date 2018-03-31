@@ -8,9 +8,45 @@ import domain.Autores;
 
 /************************************************************/
 /**
- * david
+ * 
  */
 public abstract class Catalogo {
+     	protected Libros libros; 
+    protected Memorias memorias;
+    protected Revistas revistas;
+    protected Tesis tesis;
+    
+    public Catalogo(String titulo, String fechaIngreso, Autores Autor) {
+    	this. titulo =  titulo;
+        this.fechaIngreso = fechaIngreso;
+        this.Autor=Autor;
+      
+        
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    public Autores getAutor() {
+        return Autor;
+    }
+
+    public void setAutor(Autores Autor) {
+        this.Autor = Autor;
+    }
 	/**
 	 * 
 	 */

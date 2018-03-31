@@ -15,6 +15,10 @@ import domain.Usuarios;
 public class Bibliotecarios extends Usuarios
  {
 
+    public Bibliotecarios(String unicoNombre, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion) {
+        super(unicoNombre, contraseña, nombreCompleto, tipoIdentificacion, identificacion);
+    }
+
 	@Override
 	public boolean Borrar() {
 		// TODO Auto-generated method stub

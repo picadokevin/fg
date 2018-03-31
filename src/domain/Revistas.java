@@ -19,4 +19,26 @@ public class Revistas extends Catalogo {
 	 * 
 	 */
 	private String edicion;
+
+    public Revistas(String titulo, String fechaIngreso, Autores Autor,String codigoISSN,String edicion) {
+        super(titulo, fechaIngreso, Autor);
+        this.codigoISSN=codigoISSN;
+        this.edicion=edicion;
+    }
+
+    public String getCodigoISSN() {
+        return codigoISSN;
+    }
+
+    public void setCodigoISSN(String codigoISSN) {
+        this.codigoISSN = codigoISSN;
+    }
+
+    public String getEdicion() {
+        return edicion;
+    }
+
+    public void setEdicion(String edicion) {
+        this.edicion = edicion;
+    }
 };

@@ -9,6 +9,59 @@ package domain;
  * 
  */
 public abstract class Usuarios {
+    	protected Autores autor; 
+    protected Bibliotecarios bibliotecario;
+    protected Usuario usuario;
+    
+    public Usuarios(String unicoNombre, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion) {
+    	this.unicoNombre = unicoNombre;
+        this.contraseña = contraseña;
+        this.nombreCompleto=nombreCompleto;
+        this.tipoID=tipoID;
+        this.Identificacion=Identificacion;
+    	
+    	
+    }
+
+    public String getUnicoNombre() {
+        return unicoNombre;
+    }
+
+    public void setUnicoNombre(String unicoNombre) {
+        this.unicoNombre = unicoNombre;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public String getTipoID() {
+        return tipoID;
+    }
+
+    public void setTipoID(String tipoID) {
+        this.tipoID = tipoID;
+    }
+
+    public String getIdentificacion() {
+        return Identificacion;
+    }
+
+    public void setIdentificacion(String Identificacion) {
+        this.Identificacion = Identificacion;
+    }
 	/**
 	 * 
 	 */
