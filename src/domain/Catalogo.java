@@ -8,7 +8,7 @@ import domain.Autores;
 
 /************************************************************/
 /**
- * 
+ * david
  */
 public abstract class Catalogo {
 	/**
