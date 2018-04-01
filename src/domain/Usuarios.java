@@ -17,8 +17,8 @@ public abstract class Usuarios {
     	this.unicoNombre = unicoNombre;
         this.contraseña = contraseña;
         this.nombreCompleto=nombreCompleto;
-        this.tipoID=tipoID;
-        this.Identificacion= Identificacion;
+        this.tipoID=tipoIdentificacion;
+        this.Identificacion= identificacion;
     	
     	
     }
@@ -92,7 +92,7 @@ public abstract class Usuarios {
 	/**
 	 * 
 	 */
-	public abstract void Agregar();
+	public abstract void Agregar(Bibliotecarios bi,Autores au);
 
 	/**
 	 * 

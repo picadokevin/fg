@@ -31,7 +31,7 @@ public class Autores extends Usuarios
 		return false;
 	}
 
-	@Override
+	
 	public void Agregar() {
 		// TODO Auto-generated method stub
 		
@@ -48,4 +48,9 @@ public class Autores extends Usuarios
 		// TODO Auto-generated method stub
 		
 	}
+
+    @Override
+    public void Agregar(Bibliotecarios bi, Autores au) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 };

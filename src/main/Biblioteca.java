@@ -6,7 +6,7 @@
 package main;
 
 
-import Intefaz.InterBibliotecario;
+import domain.InterBibliotecario;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -26,12 +26,12 @@ public class Biblioteca extends Application {
     //instancias globales
     InterBibliotecario ib = new InterBibliotecario();
     Stage primaryStage = new Stage();
-    Scene scene = new Scene(vbox(), 300, 200);;
+    Scene scene = new Scene(vbox(), 300, 200);
     
      public VBox vbox(){
         GridPane ventanaInicio = new GridPane();
         VBox vbox = new VBox();
-        Scene scene1 = new Scene(ib.interBibliotecario(), 400, 400);
+       Scene scene1 = new Scene(ib.interBibliotecario(), 400, 400);
       
         
         Label lbBiblioteca = new Label("Bienvenido al Sistema Virtual de la Biblioteca UCR");
