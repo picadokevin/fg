@@ -33,7 +33,7 @@ public class Usuario extends Usuarios
 	
 	public void Agregar() {
 		// TODO Auto-generated method stub
-		
+	
 	}
 
 	@Override
