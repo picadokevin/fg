@@ -24,6 +24,7 @@ public class InterBibliotecario {
     public VBox InterBibliotecario() {
 
         VBox vbVentanas = new VBox();
+        VBox Vboxbarra = new VBox();
         //menus
         MenuBar mbMenu = new MenuBar();
         Menu menuAgregar = new Menu(("Agregar"), new ImageView(new Image("mas.png")));
@@ -190,9 +191,9 @@ public class InterBibliotecario {
         menuBorrar.getItems().addAll(menuUsuariosBo, menuCatalogoBo);
 
         mbMenu.getMenus().addAll(menuAgregar, menuBorrar, menuModificar, menuMostar,menuBuscar);
-        vbVentanas.getChildren().addAll(mbMenu);
-
-        return vbVentanas;
+       
+        Vboxbarra.getChildren().addAll(mbMenu,vbVentanas);
+        return Vboxbarra;
 
     }
 }
