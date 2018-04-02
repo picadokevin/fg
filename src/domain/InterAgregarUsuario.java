@@ -26,7 +26,7 @@ public class InterAgregarUsuario {
     
     
 //Retorna un Vbox con la tabla clientes  
-    public VBox mostarTablaClientes(){
+    public VBox mostrarTablaUsuario(){
         
         TableView <Usuario> tabla = new TableView<>();
         
@@ -36,9 +36,9 @@ public class InterAgregarUsuario {
      
         //Crea la columna Nombre 
         TableColumn nombreColum = new TableColumn("Nombre Usuario");
-        nombreColum.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        nombreColum.setCellValueFactory(new PropertyValueFactory<>("nombre usuario"));
         
-        //Crear columna con la lista de nombres
+        //Crear columna con la lista de libros
         TableColumn ListaLibrosColum = new TableColumn("Libros");
         ListaLibrosColum.setMinWidth(50);
         ListaLibrosColum.setCellValueFactory(new PropertyValueFactory<>("Libros"));
