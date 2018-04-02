@@ -19,7 +19,7 @@ import javafx.scene.layout.VBox;
 public class InterBibliotecario {
     //instancias globales
 
-    InterAgregarUsuarios interAU = new InterAgregarUsuarios();
+    InterAgregarBibliotericario interAU = new InterAgregarBibliotericario();
 
     public VBox InterBibliotecario() {
 
@@ -40,7 +40,7 @@ public class InterBibliotecario {
         MenuItem UsuarioItemAg = new MenuItem("Usuarios");
         UsuarioItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
-            vbVentanas.getChildren().addAll(interAU.interAddUsuario());
+          
         });
         MenuItem AutoresItemAg = new MenuItem("Autores");
         AutoresItemAg.setOnAction((event) -> {
@@ -51,6 +51,7 @@ public class InterBibliotecario {
         BibliotecariosItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
 //                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
+  vbVentanas.getChildren().addAll(interAU.interAddUsuario());
         });
         //MenusItemsCatalogoAgregar
 

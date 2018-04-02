@@ -16,7 +16,7 @@ import javafx.scene.layout.GridPane;
  *
  * @author David
  */
-public class InterAgregarUsuarios {
+public class InterAgregarBibliotericario {
      public String nombreUni;
     public String nombreComple;
      static String identificacio;

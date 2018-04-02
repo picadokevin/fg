@@ -45,8 +45,8 @@ public class Bibliotecarios extends Usuarios
        PrintStream ps = getPrintStream("Usuarios.txt");
 
         ps.println(bi.getUnicoNombre() + ";" + bi.getContraseña()+ ";" + bi.getNombreCompleto()+ ";" + bi.getTipoID() + ";" + bi.getIdentificacion());
-	System.out.print("hola");
-	}
+	
+                }
 
 	@Override
 	public boolean Buscar() {
