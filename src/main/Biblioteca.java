@@ -84,5 +84,3 @@ public class Biblioteca extends Application {
         launch(args);
     }
     }
-
-   //hola
