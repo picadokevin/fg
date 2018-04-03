@@ -36,7 +36,7 @@ public class InicioSesion extends Application {
      public VBox vbox(){
         GridPane ventanaInicio = new GridPane();
         VBox vbox = new VBox();
-        
+        VBox vb=new VBox();
       
         
         Label lbBiblioteca = new Label("Bienvenido al Sistema Virtual de la Biblioteca UCR");
@@ -58,11 +58,11 @@ public class InicioSesion extends Application {
             if(estado==true){
             if(cbtipoUsuario.getValue().toString().equalsIgnoreCase("Bibliotecario")) {
                 
-         primaryStage.close();
-        scene= new Scene(pantbiblio.InterBibliotecario(), 500, 400);
+          primaryStage.close();
+          scene= new Scene(pantbiblio.InterBibliotecario(), 500, 400);
           secondStage.setScene(scene);
-         secondStage.setTitle("Biblioteca");
-         secondStage.show();
+          secondStage.setTitle("Biblioteca");
+          secondStage.show();
             }
             } else{
                 JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
@@ -82,7 +82,8 @@ public class InicioSesion extends Application {
         ventanaInicio.add(tfContraseña, 1, 4);
         ventanaInicio.add(btnConfirmar, 0, 5);
         
-        vbox.getChildren().addAll(lbBiblioteca, ventanaInicio);
+        vbox.getChildren().addAll( lbBiblioteca,ventanaInicio);
+        
         return vbox;
         
         

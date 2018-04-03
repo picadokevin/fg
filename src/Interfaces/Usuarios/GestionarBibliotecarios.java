@@ -39,7 +39,7 @@ public class GestionarBibliotecarios {
     TextField contraseñ;
     Button btnAgregar;
    
-//    Label Msj ;
+
     
      public GridPane interAddBibliotecario(){
       

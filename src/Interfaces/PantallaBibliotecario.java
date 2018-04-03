@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interfaces.Catalogo.GestionarLibros;
 import Interfaces.Usuarios.GestionarAutores;
 import Interfaces.Usuarios.GestionarBibliotecarios;
 import Interfaces.Usuarios.GestionarUsuarios;
@@ -21,10 +22,12 @@ import javafx.scene.layout.VBox;
  */
 public class PantallaBibliotecario {
     //instancias globales
-
+      
     GestionarBibliotecarios interAU = new GestionarBibliotecarios();
     GestionarAutores interABMzutores = new GestionarAutores();
     GestionarUsuarios interUsuarios=new GestionarUsuarios();
+    
+    GestionarLibros interlibros=new GestionarLibros();
     public VBox InterBibliotecario() {
 
         VBox vbVentanas = new VBox();
@@ -40,13 +43,13 @@ public class PantallaBibliotecario {
 
         //MenusItemsUsuariosAgregar
          Menu menuUsuariosAg = new Menu("Usuarios");
-        Menu menuCatalogoAg = new Menu("Catalogo");
+        
         
         MenuItem UsuarioItemAg = new MenuItem("Usuarios");
         UsuarioItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
             vbVentanas.getChildren().addAll(interUsuarios.AgregarAutor());
-          
+            
         });
         MenuItem AutoresItemAg = new MenuItem("Autores");
         AutoresItemAg.setOnAction((event) -> {
@@ -57,18 +60,20 @@ public class PantallaBibliotecario {
         BibliotecariosItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
              
-  vbVentanas.getChildren().addAll(interAU.interAddBibliotecario());
+            vbVentanas.getChildren().addAll(interAU.interAddBibliotecario());
         });
         //MenusItemsCatalogoAgregar
-
+      Menu menuCatalogoAg = new Menu("Catalogo");
         MenuItem LibrosItemAg = new MenuItem("Libros");
         LibrosItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
-//                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
+             
+           vbVentanas.getChildren().addAll(interlibros.AgregarLibros());
         });
         MenuItem PeriodicosItemAg = new MenuItem("Periodicos");
-        LibrosItemAg.setOnAction((event) -> {
+        PeriodicosItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
+           
 //                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
         });
         MenuItem RevistasItemAg = new MenuItem("Revistas");
