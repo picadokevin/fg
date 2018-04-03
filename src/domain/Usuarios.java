@@ -13,13 +13,13 @@ public abstract class Usuarios {
     protected Bibliotecarios bibliotecario;
     protected Usuario usuario;
     
-    public Usuarios(String unicoNombre, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion) {
+    public Usuarios(String unicoNombre, String contraseña, String nombreCompleto, String tipoIdentificacion, String identificacion,String tipoUsuario) {
     	this.unicoNombre = unicoNombre;
         this.contraseña = contraseña;
         this.nombreCompleto=nombreCompleto;
         this.tipoID=tipoIdentificacion;
         this.Identificacion= identificacion;
-    	
+    	this.tipoUsuario=tipoUsuario;
     	
     }
 
@@ -62,6 +62,13 @@ public abstract class Usuarios {
     public void setIdentificacion(String Identificacion) {
         this.Identificacion = Identificacion;
     }
+    public String gettipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void settipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
 	/**
 	 * 
 	 */
@@ -82,6 +89,12 @@ public abstract class Usuarios {
 	 * 
 	 */
 	private String Identificacion;
+
+	/**
+	 * 
+	 * @return 
+	 */
+        private String tipoUsuario;
 
 	/**
 	 * 
