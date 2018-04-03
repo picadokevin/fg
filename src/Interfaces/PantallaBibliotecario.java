@@ -18,7 +18,7 @@ import javafx.scene.layout.VBox;
  *
  * @author David
  */
-public class InterBibliotecario {
+public class PantallaBibliotecario {
     //instancias globales
 
     GestionarBibliotecarios interAU = new GestionarBibliotecarios();

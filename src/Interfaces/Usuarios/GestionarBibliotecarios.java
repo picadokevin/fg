@@ -6,7 +6,13 @@
 package Interfaces.Usuarios;
 
 import domain.Bibliotecarios;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -20,12 +26,13 @@ import javax.swing.JOptionPane;
  * @author David
  */
 public class GestionarBibliotecarios {
-     public  String nombreUni;
+    public String nombreUni;
     public String nombreComple;
-     static  String identificacio;
-      static String tipoIdentifica;
+    static String identificacio;
+    static String tipoIdentifica;
+    static String tipoUsuario;
     public String contrase;
-    TextField nombreUnic ;
+    TextField nombreUnic;
     TextField nombreComplet;
     TextField Tipoidentificacion;
     TextField identi;
@@ -59,6 +66,10 @@ public class GestionarBibliotecarios {
         gpVentanaBibliotecario.add(contraseña, 0, 4);
          contraseñ = new TextField();
         gpVentanaBibliotecario.add(contraseñ, 1, 4);
+         Label tipoUsuar = new Label("Tipo de Usuario");
+        gpVentanaBibliotecario.add(tipoUsuar, 0, 5);
+        TextField tipoUsuari = new TextField();
+        gpVentanaBibliotecario.add(tipoUsuari, 1, 5);
 //        Msj = new Label("");
            gpVentanaBibliotecario.add(btnAgregar, 0, 7);
 //        gpVentanaBibliotecario.add(Msj,0,6);
@@ -76,8 +87,9 @@ public class GestionarBibliotecarios {
                  tipoIdentifica = Tipoidentificacion.getText();
                  identificacio = identi.getText();
                  contrase = contraseñ.getText();
-                 Bibliotecarios bi = new Bibliotecarios(nombreUni, contrase, nombreComple, tipoIdentifica, identificacio);
-                 bi.Agregar(bi);
+                 tipoUsuario=tipoUsuari.getText();
+               Bibliotecarios bi=new Bibliotecarios(nombreUni, contrase, nombreComple, tipoIdentifica, identificacio,tipoUsuario);
+                bi.Agregar(bi);
                 JOptionPane.showMessageDialog(null,"Bibliotecario agregado con exito :)");
                  Limpiar();
                 
@@ -114,6 +126,103 @@ public class GestionarBibliotecarios {
      }
 
      
-     
+          public  boolean verificarUsuario(Bibliotecarios [] B,String nombreunico,String contraseña){
+         boolean encontrado=false;
+        
+        for(int i=0;i<B.length;i++){
+            System.out.println(nombreunico);
+            
+            if(nombreunico.equalsIgnoreCase(B[i].getUnicoNombre())){
+                encontrado=true;
+                
+                
+                break;
+            }
+        
+        }
+       
+         return encontrado;
+         
+     }
+     public int CantidadRegistrosUsuarios() {//cuenta la cantidad de lineas que tiene el registro
+        int cuentaRegistro = 0;
+        try {
+            BufferedReader br = getBufferedReader("Usuarios.txt");
+            String registro = br.readLine();
+            while (registro != null) {
+                cuentaRegistro++;
+                registro = br.readLine();
+            }
+        } catch (IOException ioe) {
+            JOptionPane.showMessageDialog(null, "error");
+        }
+        return cuentaRegistro;
+    } 
+    public Bibliotecarios [] arregloUsuarios() {//obtiene lo que tiene el archivo y lo pasa a un arreglo 
+        Bibliotecarios elementosUsuarios[] = new Bibliotecarios[CantidadRegistrosUsuarios()];
+        int indice = 0;
+        try {
+            BufferedReader br = getBufferedReader("Usuarios.txt");
+            String registro = br.readLine();
+            while (registro != null) {
+
+              
+                int controlaTokens = 1;
+                String unicoNombre = "",contraseña = "",nombreCompleto = "",tipoIdentificacion = "",identificacion="",tipoUsuario="";
+
+                StringTokenizer st = new StringTokenizer(registro, ";");
+
+                while (st.hasMoreTokens()) {
+
+                    if (controlaTokens == 1) {
+                        unicoNombre = st.nextToken();
+                    } else if (controlaTokens == 2) {
+                        contraseña = st.nextToken();
+                    } else if (controlaTokens == 3) {
+                        nombreCompleto = st.nextToken();
+                    } else if (controlaTokens == 4) {
+                        tipoIdentificacion = st.nextToken();
+                    } else if (controlaTokens == 5) {
+                        identificacion = st.nextToken();
+                    }else if(controlaTokens==6){
+                        tipoUsuario=st.nextToken();
+                    }else {
+                        controlaTokens = st.countTokens();
+                    }
+
+                    controlaTokens++;
+                }//Fin del While 2;
+
+                Bibliotecarios  B= new Bibliotecarios(unicoNombre, contraseña, nombreCompleto, tipoIdentificacion, identificacion,tipoUsuario);
+                elementosUsuarios[indice] = B;
+                indice++;
+                registro = br.readLine();
+            }//Fin del while 1
+
+        }//Fin del try
+        catch (FileNotFoundException fnfe) {
+           
+            JOptionPane.showMessageDialog(null, "Problemas con el archivo");
+        }//Fin del catch 
+        catch (IOException ioe) {
+            JOptionPane.showMessageDialog(null, "Problemas con el archivo");
+        }
+
+        return elementosUsuarios;
+    }    
+   
+ public BufferedReader getBufferedReader(String nombrearchivo) {
+        File archivo = new File(nombrearchivo);
+        BufferedReader br = null;
+        try {
+            FileInputStream fis = new FileInputStream(archivo);
+            InputStreamReader isr = new InputStreamReader(fis);
+            br = new BufferedReader(isr);
+
+        } catch (FileNotFoundException fnfe) {
+            JOptionPane.showMessageDialog(null, "error");
+        }
+        return br;
+    } 
     
 }

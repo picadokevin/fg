@@ -26,7 +26,7 @@ public class GestionarAutores {
      static String identificacio;
       static String tipoIdentifica;
     public String contrase;
-
+      static String tipoUsuario;
     TextField nombreUnic ;
     TextField nombreComplet;
     TextField Tipoidentificacion;
@@ -58,6 +58,10 @@ public class GestionarAutores {
         gpVentanaBibliotecario.add(contraseña, 0, 4);
          contraseñ = new TextField();
         gpVentanaBibliotecario.add(contraseñ, 1, 4);
+         Label tipoUsuar = new Label("Tipo de Usuario");
+        gpVentanaBibliotecario.add(tipoUsuar, 0, 5);
+        TextField tipoUsuari = new TextField();
+        gpVentanaBibliotecario.add(tipoUsuari, 1, 5);
 //        Msj = new Label("");
            gpVentanaBibliotecario.add(btnAgregar, 0, 7);
 //        gpVentanaBibliotecario.add(Msj,0,6);
@@ -75,7 +79,8 @@ public class GestionarAutores {
                  tipoIdentifica = Tipoidentificacion.getText();
                  identificacio = identi.getText();
                  contrase = contraseñ.getText();
-                 Autores au = new Autores(nombreUni, contrase, nombreComple, tipoIdentifica, identificacio);
+                  tipoUsuario=tipoUsuari.getText();
+                 Autores au = new Autores(nombreUni, contrase, nombreComple, tipoIdentifica, identificacio,tipoUsuario);
                  au.Agregar(au);
                 JOptionPane.showMessageDialog(null,"Autor agregado con exito :)");
                  Limpiar();

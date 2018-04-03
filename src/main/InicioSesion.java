@@ -6,7 +6,8 @@
 package main;
 
 
-import Interfaces.InterBibliotecario;
+import Interfaces.PantallaBibliotecario;
+import Interfaces.Usuarios.GestionarBibliotecarios;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,19 +17,22 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author David
  */
-public class Biblioteca extends Application {
+public class InicioSesion extends Application {
     
     //instancias globales
-    InterBibliotecario ib = new InterBibliotecario();
+    PantallaBibliotecario pantbiblio = new PantallaBibliotecario();
     Stage primaryStage = new Stage();
     Stage secondStage = new Stage();;
     Scene scene = new Scene(vbox(), 300, 200);
-    
+     GestionarBibliotecarios gestBiblio;
+     TextField tfUsuario ;
+      TextField tfContraseña;
      public VBox vbox(){
         GridPane ventanaInicio = new GridPane();
         VBox vbox = new VBox();
@@ -47,11 +51,18 @@ public class Biblioteca extends Application {
         Label lbContraseña = new Label("Contraseña");
         Button btnConfirmar= new Button("Confirmar");
         btnConfirmar.setOnAction((event) -> {
+            gestBiblio=new GestionarBibliotecarios();
+            String contraseña=tfContraseña.getText();
+            String usuarioUnico=tfUsuario.getText();
+            boolean estado=gestBiblio.verificarUsuario(gestBiblio.arregloUsuarios(),usuarioUnico, contraseña);
+            if(estado==true){
             if(cbtipoUsuario.getValue().toString().equalsIgnoreCase("Bibliotecario")) {
                 
          primaryStage.close();
-       scene= new Scene(ib.InterBibliotecario(), 500, 400);
-            
+       scene= new Scene(pantbiblio.InterBibliotecario(), 500, 400);
+             }else{
+                JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
+            }
           
          secondStage.setScene(scene);
          secondStage.setTitle("Biblioteca");
@@ -59,8 +70,8 @@ public class Biblioteca extends Application {
             }
         });
         
-        TextField tfUsuario = new TextField();
-        TextField tfContraseña = new TextField();
+        tfUsuario = new TextField();
+        tfContraseña = new TextField();
      
 
         
