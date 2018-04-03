@@ -1,27 +1,3 @@
-picado;csdgfdb;kevin pivado;null;null
-kevinn;hola;kevin picado;null;null
-pablo;hola;picado pablo;null;null
-kjl;hola;picado pablo;null;null
-kjl;hola;picado pablo;null;null
-sqdwe;wqcfwcf;swqdwe;null;null
-fef4e;swcdsc;crevrt;null;null
-csvcdf;csvt6;cfdsv d;null;null
-frewfer;sf4rg;dewftet;dwefe;null
-;;;;null
-davidan;fnkjven;David Aguilera;Cedula;null
-aaa;111;ffff;cedula;3000
-;;;;
-;;;;
-gdsak;nnn;hdhdhd;kkkknnnn;nnn
-jjj;,,;kk;ññ;nn
-aaas;11;ff;ffa;a
-jj;lll;jjj;lll;mm
-jjj;a;jjj;a;a
-;;;;
-;;;;
-;;;;
-;;;;
-a;p;j;n;n
-l;l;l;l;l
-p;p;p;p;p
-a;a;a;a;aa
+﻿picado;csdgfdb;kevin pivado;null;null
+kevin;hola;kevin picado;null;null
+David;hola;David Aguilera;cedula;3e43w;Bibliotecario

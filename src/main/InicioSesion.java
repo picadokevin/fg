@@ -53,20 +53,19 @@ public class InicioSesion extends Application {
         btnConfirmar.setOnAction((event) -> {
             gestBiblio=new GestionarBibliotecarios();
             String contraseña=tfContraseña.getText();
-            String usuarioUnico=tfUsuario.getText();
-            boolean estado=gestBiblio.verificarUsuario(gestBiblio.arregloUsuarios(),usuarioUnico, contraseña);
+            String usuario=tfUsuario.getText();
+            boolean estado=gestBiblio.verificarUsuario(gestBiblio.arregloUsuarios(),usuario, contraseña);
             if(estado==true){
             if(cbtipoUsuario.getValue().toString().equalsIgnoreCase("Bibliotecario")) {
                 
          primaryStage.close();
-       scene= new Scene(pantbiblio.InterBibliotecario(), 500, 400);
-             }else{
-                JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
-            }
-          
-         secondStage.setScene(scene);
+        scene= new Scene(pantbiblio.InterBibliotecario(), 500, 400);
+          secondStage.setScene(scene);
          secondStage.setTitle("Biblioteca");
          secondStage.show();
+            }
+            } else{
+                JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrecta");
             }
         });
         
