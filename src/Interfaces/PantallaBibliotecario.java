@@ -7,6 +7,7 @@ package Interfaces;
 
 import Interfaces.Usuarios.GestionarAutores;
 import Interfaces.Usuarios.GestionarBibliotecarios;
+import Interfaces.Usuarios.GestionarUsuarios;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -23,7 +24,7 @@ public class PantallaBibliotecario {
 
     GestionarBibliotecarios interAU = new GestionarBibliotecarios();
     GestionarAutores interABMzutores = new GestionarAutores();
-
+    GestionarUsuarios interUsuarios=new GestionarUsuarios();
     public VBox InterBibliotecario() {
 
         VBox vbVentanas = new VBox();
@@ -44,6 +45,7 @@ public class PantallaBibliotecario {
         MenuItem UsuarioItemAg = new MenuItem("Usuarios");
         UsuarioItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
+            vbVentanas.getChildren().addAll(interUsuarios.AgregarAutor());
           
         });
         MenuItem AutoresItemAg = new MenuItem("Autores");
