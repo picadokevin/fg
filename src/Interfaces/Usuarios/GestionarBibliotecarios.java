@@ -132,7 +132,7 @@ public class GestionarBibliotecarios {
         for(int i=0;i<B.length;i++){
             System.out.println(nombreunico);
             
-            if(nombreunico.equalsIgnoreCase(B[i].getUnicoNombre())){
+            if(nombreunico.equals(B[i].getUnicoNombre())&&contraseña.equals(B[i].getContraseña())){
                 encontrado=true;
                 
                 
