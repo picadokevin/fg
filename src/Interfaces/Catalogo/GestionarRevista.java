@@ -5,7 +5,6 @@
  */
 package Interfaces.Catalogo;
 
-import domain.Periodicos;
 import domain.Revistas;
 import java.time.LocalDate;
 import javafx.event.ActionEvent;
