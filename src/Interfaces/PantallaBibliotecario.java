@@ -7,6 +7,8 @@ package Interfaces;
 
 import Interfaces.Catalogo.GestionarLibros;
 import Interfaces.Catalogo.GestionarMemorias;
+import Interfaces.Catalogo.GestionarPeriodico;
+import Interfaces.Catalogo.GestionarRevista;
 import Interfaces.Usuarios.GestionarAutores;
 import Interfaces.Usuarios.GestionarBibliotecarios;
 import Interfaces.Usuarios.GestionarUsuarios;
@@ -28,7 +30,10 @@ public class PantallaBibliotecario {
     GestionarAutores interABMzutores = new GestionarAutores();
     GestionarUsuarios interUsuarios=new GestionarUsuarios();
     GestionarMemorias interMemorias=new GestionarMemorias();
+    GestionarPeriodico interPeriodico=new GestionarPeriodico();
     GestionarLibros interlibros=new GestionarLibros();
+    
+    GestionarRevista interrevista=new GestionarRevista();
     public VBox InterBibliotecario() {
 
         VBox vbVentanas = new VBox();
@@ -75,12 +80,12 @@ public class PantallaBibliotecario {
         PeriodicosItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
            
-//                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
+              vbVentanas.getChildren().addAll(interPeriodico.AgregarPeriodico());
         });
         MenuItem RevistasItemAg = new MenuItem("Revistas");
         RevistasItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
-//                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
+               vbVentanas.getChildren().addAll(interrevista.AgregarRevista());
         });
         MenuItem TesisItemAg = new MenuItem("Tesis");
         TesisItemAg.setOnAction((event) -> {

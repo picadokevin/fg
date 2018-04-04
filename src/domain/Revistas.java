@@ -5,6 +5,11 @@
 package domain;
 
 import domain.Catalogo;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import javax.swing.JOptionPane;
 
 /************************************************************/
 /**
@@ -24,6 +29,25 @@ public class Revistas extends Catalogo {
         super(titulo, fechaIngreso, Autor);
         this.codigoISSN=codigoISSN;
         this.edicion=edicion;
+    }
+    public void Agregar(Revistas revistas) {
+		// TODO Auto-generated method stub
+	 PrintStream ps = getPrintStream("Revistas.txt");
+
+        ps.println(revistas.getTitulo() + ";" + revistas.getFechaIngreso()+ ";" + revistas.getAutor()+ ";" + revistas.getCodigoISSN() + ";" + revistas.getEdicion());
+	}
+    public PrintStream getPrintStream(String nombreArchivo) {
+        File archivo = new File(nombreArchivo);
+        PrintStream ps = null;
+        try {
+            FileOutputStream fos = new FileOutputStream(archivo, true);
+            ps = new PrintStream(fos);
+
+        } catch (FileNotFoundException fnfe) {
+            JOptionPane.showMessageDialog(null, "error");
+            
+        }
+        return ps;
     }
 
     public String getCodigoISSN() {
