@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -26,6 +27,7 @@ import javax.swing.JOptionPane;
 public class InicioSesion extends Application {
     
     //instancias globales
+    
     PantallaBibliotecario pantbiblio = new PantallaBibliotecario();
     Stage primaryStage = new Stage();
     Stage secondStage = new Stage();;
@@ -33,6 +35,7 @@ public class InicioSesion extends Application {
      GestionarBibliotecarios gestBiblio;
      TextField tfUsuario ;
       TextField tfContraseña;
+      PasswordField passUsuario;
      public VBox vbox(){
         GridPane ventanaInicio = new GridPane();
         VBox vbox = new VBox();
@@ -52,7 +55,8 @@ public class InicioSesion extends Application {
         Button btnConfirmar= new Button("Confirmar");
         btnConfirmar.setOnAction((event) -> {
             gestBiblio=new GestionarBibliotecarios();
-            String contraseña=tfContraseña.getText();
+            String contraseña=passUsuario.getText();
+          
             String usuario=tfUsuario.getText();
             boolean estado=gestBiblio.verificarUsuario(gestBiblio.arregloUsuarios(),usuario, contraseña);
             if(estado==true){
@@ -70,7 +74,8 @@ public class InicioSesion extends Application {
         });
         
         tfUsuario = new TextField();
-        tfContraseña = new TextField();
+        //tfContraseña = new TextField();
+        passUsuario=new PasswordField();
      
 
         
@@ -79,7 +84,7 @@ public class InicioSesion extends Application {
         ventanaInicio.add(lbUsuario, 0, 1);
         ventanaInicio.add(tfUsuario, 1, 1);
         ventanaInicio.add(lbContraseña, 0, 4);
-        ventanaInicio.add(tfContraseña, 1, 4);
+        ventanaInicio.add(passUsuario, 1, 4);
         ventanaInicio.add(btnConfirmar, 0, 5);
         
         vbox.getChildren().addAll( lbBiblioteca,ventanaInicio);
