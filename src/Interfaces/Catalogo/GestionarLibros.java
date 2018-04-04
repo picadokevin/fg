@@ -61,7 +61,7 @@ public class GestionarLibros {
        gpVentanaLibros.add(textareaSubtema, 1, 4);
          Label labelFechaingreso = new Label("Fecha de ingreso");
         gpVentanaLibros.add(labelFechaingreso, 0, 5);
-         gpVentanaLibros.add(datepickerFecha,1,5);
+        // gpVentanaLibros.add(datepickerFecha,1,5);
 //        Msj = new Label("");
            gpVentanaLibros.add(btnAgregar, 0, 6);
          

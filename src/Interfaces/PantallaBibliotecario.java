@@ -119,7 +119,7 @@ public class PantallaBibliotecario {
 //                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
         });
         MenuItem PeriodicosItemBo = new MenuItem("Periodicos");
-        LibrosItemAg.setOnAction((event) -> {
+        PeriodicosItemBo.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
 //                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
         });
@@ -165,7 +165,7 @@ public class PantallaBibliotecario {
 //                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
         });
         MenuItem PeriodicosItemAc = new MenuItem("Periodicos");
-        LibrosItemAg.setOnAction((event) -> {
+         PeriodicosItemAc.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
 //                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
         });
