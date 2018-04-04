@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Interfaces.Catalogo.GestionarLibros;
+import Interfaces.Catalogo.GestionarMemorias;
 import Interfaces.Usuarios.GestionarAutores;
 import Interfaces.Usuarios.GestionarBibliotecarios;
 import Interfaces.Usuarios.GestionarUsuarios;
@@ -26,7 +27,7 @@ public class PantallaBibliotecario {
     GestionarBibliotecarios interAU = new GestionarBibliotecarios();
     GestionarAutores interABMzutores = new GestionarAutores();
     GestionarUsuarios interUsuarios=new GestionarUsuarios();
-    
+    GestionarMemorias interMemorias=new GestionarMemorias();
     GestionarLibros interlibros=new GestionarLibros();
     public VBox InterBibliotecario() {
 
@@ -89,7 +90,7 @@ public class PantallaBibliotecario {
         MenuItem MemoriasItemAg = new MenuItem("Memorias");
         MemoriasItemAg.setOnAction((event) -> {
             vbVentanas.getChildren().clear();
-//                vbVentanas.getChildren().addAll(interAU.interAddUsuario());
+                vbVentanas.getChildren().addAll(interMemorias.AgregarMemorias());
         });
 
         //MenusItemBorrar

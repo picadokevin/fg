@@ -1,9 +1,12 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Interfaces.Catalogo;
 
-
-import domain.Autores;
 import domain.Libros;
+import domain.Memorias;
 import java.time.LocalDate;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -18,57 +21,57 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author David
+ * @author UsuarioPC
  */
-public class GestionarLibros {
-        public String titulo;
+public class GestionarMemorias {
+     public String titulo;
     
     public String autor;
-     static String codigoisbn;
-      static String tema;
-    public String subtema;
+     static String nombreConferenci;
+      static String abstrac;
+    public String resumen;
     public String fechaIngreso;
      
-    TextField texfieldTituloLibro ;
+    TextField texfieldTitulomemoria ;
     TextField textfieldAutor;
-    TextField textfieldCodigo;
-    TextArea textareaTema;
-    TextArea textareaSubtema;
+    TextField textfieldnombreConferencia;
+    TextArea textareaResumen;
+    TextArea textareaAbstract;
     Button btnAgregar;
     DatePicker datepickerFecha;
-    public GridPane AgregarLibros(){
+    public GridPane AgregarMemorias(){
     GridPane gpVentanaLibros = new GridPane();
         btnAgregar = new Button("Agregar");
          datepickerFecha = new DatePicker();
-        Label labelTituloLibro = new Label("Titulo");
-        gpVentanaLibros.add(labelTituloLibro, 0, 0);
-        texfieldTituloLibro = new TextField();
-        gpVentanaLibros.add(texfieldTituloLibro, 1, 0);
-        Label labelAutor= new Label("Nombre completo");
+        Label labelTituloMemoria = new Label("Titulo");
+        gpVentanaLibros.add(labelTituloMemoria, 0, 0);
+        texfieldTitulomemoria = new TextField();
+        gpVentanaLibros.add(texfieldTitulomemoria, 1, 0);
+        Label labelAutor= new Label("Nombre del autor");
         gpVentanaLibros.add(labelAutor, 0, 1);
          textfieldAutor= new TextField();
         gpVentanaLibros.add(textfieldAutor, 1, 1);
-        Label codigoIsbn = new Label("Código ISBN");
-        gpVentanaLibros.add(codigoIsbn, 0, 2);
-         textfieldCodigo = new TextField();
-        gpVentanaLibros.add(textfieldCodigo, 1, 2);
-        Label labelTema = new Label("Tema");
-        gpVentanaLibros.add(labelTema, 0, 3);
-        textareaTema = new TextArea();
-         gpVentanaLibros.add(textareaTema, 1, 3);
-        Label labelSubtema = new Label("Subtema");
-        gpVentanaLibros.add(labelSubtema, 0, 4);
-         textareaSubtema = new TextArea();
-       gpVentanaLibros.add(textareaSubtema, 1, 4);
+        Label nombreConferencia = new Label("Nombre de la conferencia");
+        gpVentanaLibros.add(nombreConferencia, 0, 2);
+         textfieldnombreConferencia = new TextField();
+        gpVentanaLibros.add(textfieldnombreConferencia, 1, 2);
+        Label labelResumen = new Label("Resumen");
+        gpVentanaLibros.add(labelResumen, 0, 3);
+        textareaResumen = new TextArea();
+         gpVentanaLibros.add(textareaResumen, 1, 3);
+        Label labelAbstract = new Label("Abstract");
+        gpVentanaLibros.add(labelAbstract, 0, 4);
+         textareaAbstract = new TextArea();
+       gpVentanaLibros.add(textareaAbstract, 1, 4);
          Label labelFechaingreso = new Label("Fecha de ingreso");
         gpVentanaLibros.add(labelFechaingreso, 0, 5);
          gpVentanaLibros.add(datepickerFecha,1,5);
 //        Msj = new Label("");
            gpVentanaLibros.add(btnAgregar, 0, 6);
-         textareaTema.setPrefWidth(100);
-         textareaTema.setPrefHeight(100);
-         textareaSubtema.setPrefWidth(100);
-         textareaSubtema.setPrefHeight(100);
+         textareaResumen.setPrefWidth(100);
+         textareaResumen.setPrefHeight(100);
+         textareaAbstract.setPrefWidth(100);
+         textareaAbstract.setPrefHeight(100);
         
          datepickerFecha.setOnAction(new EventHandler() {
             public void handle(Event t) {
@@ -87,14 +90,14 @@ public class GestionarLibros {
                 if(verificaInfo() == true)
            JOptionPane.showMessageDialog(null, "Porfavor ingrese toda la informacion necesaria.");
                 else{   
-                 titulo = texfieldTituloLibro.getText();
+                 titulo = texfieldTitulomemoria.getText();
                  autor= textfieldAutor.getText();
-                 codigoisbn=textfieldCodigo.getText();
+                 nombreConferenci=textfieldnombreConferencia.getText();
                 
-                tema = textareaTema.getText();
-                 subtema=textareaSubtema.getText();
-                Libros libros=new Libros(titulo, fechaIngreso, autor, codigoisbn, tema, subtema);
-                libros.Agregar(libros);
+                resumen = textareaResumen.getText();
+                 abstrac=textareaAbstract.getText();
+                Memorias memoria=new Memorias(titulo, fechaIngreso, autor, resumen, abstrac, nombreConferenci);
+                memoria.Agregar(memoria);
                 JOptionPane.showMessageDialog(null,"Autor agregado con exito :)");
                  Limpiar();
                 
@@ -108,17 +111,17 @@ public class GestionarLibros {
     
 }
     public void Limpiar(){
-      texfieldTituloLibro.setText("");
+      texfieldTitulomemoria.setText("");
       textfieldAutor.setText("");
-      textfieldCodigo.setText("");
+      textfieldnombreConferencia.setText("");
     
             }
     private boolean verificaInfo(){
-         if(texfieldTituloLibro.getText().isEmpty())
+         if(texfieldTitulomemoria.getText().isEmpty())
              return true;
          else if(textfieldAutor.getText().isEmpty())
              return true;
-         else if(textfieldCodigo.getText().isEmpty())
+         else if(textfieldnombreConferencia.getText().isEmpty())
              return true;
          else
              return false;

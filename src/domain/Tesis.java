@@ -20,7 +20,7 @@ public class Tesis extends Catalogo {
 	 */
 	private String Abstract;
 
-    public Tesis(String titulo, String fechaIngreso, Autores Autor,String Resumen,String Abstract) {
+    public Tesis(String titulo, String fechaIngreso, String Autor,String Resumen,String Abstract) {
         super(titulo, fechaIngreso, Autor);
         this.Resumen=Resumen;
         this.Abstract=Abstract;

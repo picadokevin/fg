@@ -8,10 +8,14 @@ package Interfaces.Usuarios;
 
 
 import domain.Autores;
+import java.time.LocalDate;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javax.swing.JOptionPane;
@@ -32,6 +36,7 @@ public class GestionarAutores {
     TextField Tipoidentificacion;
     TextField identi;
     TextField contraseñ;
+    TextField tipoUsuari ;
     Button btnAgregar;
     
     public GridPane AgregarAutor(){
@@ -60,7 +65,7 @@ public class GestionarAutores {
         gpVentanaBibliotecario.add(contraseñ, 1, 4);
          Label tipoUsuar = new Label("Tipo de Usuario");
         gpVentanaBibliotecario.add(tipoUsuar, 0, 5);
-        TextField tipoUsuari = new TextField();
+        tipoUsuari = new TextField();
         gpVentanaBibliotecario.add(tipoUsuari, 1, 5);
 //        Msj = new Label("");
            gpVentanaBibliotecario.add(btnAgregar, 0, 7);
@@ -99,6 +104,7 @@ public void Limpiar(){
       Tipoidentificacion.setText("");
       identi.setText("");
       contraseñ .setText("");
+      tipoUsuari.setText("");
             }
      
             //Metodo que verifica que todos los espacios de informacion esten llenos
@@ -117,9 +123,10 @@ public void Limpiar(){
          else
              return false;
      }
+    } 
 
      
     
-}
+
     
 

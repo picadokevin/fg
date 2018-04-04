@@ -37,6 +37,7 @@ public class GestionarBibliotecarios {
     TextField Tipoidentificacion;
     TextField identi;
     TextField contraseñ;
+    TextField tipoUsuari;
     Button btnAgregar;
    
 
@@ -68,7 +69,7 @@ public class GestionarBibliotecarios {
         gpVentanaBibliotecario.add(contraseñ, 1, 4);
          Label tipoUsuar = new Label("Tipo de Usuario");
         gpVentanaBibliotecario.add(tipoUsuar, 0, 5);
-        TextField tipoUsuari = new TextField();
+        tipoUsuari = new TextField();
         gpVentanaBibliotecario.add(tipoUsuari, 1, 5);
 //        Msj = new Label("");
            gpVentanaBibliotecario.add(btnAgregar, 0, 7);
@@ -106,6 +107,7 @@ public class GestionarBibliotecarios {
       Tipoidentificacion.setText("");
       identi.setText("");
       contraseñ .setText("");
+      tipoUsuari.setText("");
             }
      
             //Metodo que verifica que todos los espacios de informacion esten llenos

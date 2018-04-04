@@ -15,7 +15,7 @@ public class Periodicos extends Catalogo {
     private String edicion;
     private String fecha;
     
-    public Periodicos(String titulo, String fechaIngreso, Autores Autor,String codigoISSN,String edicion,String fecha) {
+    public Periodicos(String titulo, String fechaIngreso, String Autor,String codigoISSN,String edicion,String fecha) {
         super(titulo, fechaIngreso, Autor);
         this.codigoISSN=codigoISSN;
         this.edicion=edicion;

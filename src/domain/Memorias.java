@@ -5,6 +5,11 @@
 package domain;
 
 import domain.Catalogo;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import javax.swing.JOptionPane;
 
 /************************************************************/
 /**
@@ -24,11 +29,30 @@ public class Memorias extends Catalogo {
 	 */
 	private String conferenciaPresentada;
 
-    public Memorias(String titulo, String fechaIngreso, Autores Autor,String Resumen,String Abstract,String conferecinaPresentada) {
+    public Memorias(String titulo, String fechaIngreso, String Autor,String Resumen,String Abstract,String conferecinaPresentada) {
         super(titulo, fechaIngreso, Autor);
         this.Resumen=Resumen;
         this.Abstract=Abstract;
         this.conferenciaPresentada=conferenciaPresentada;
+    }
+    public void Agregar(Memorias memoria) {
+		// TODO Auto-generated method stub
+	 PrintStream ps = getPrintStream("Memorias.txt");
+
+        ps.println(memoria.getTitulo() + ";" + memoria.getFechaIngreso()+ ";" + memoria.getAutor()+ ";" + memoria.getResumen() + ";" + memoria.getAbstract()+";"+memoria.getConferenciaPresentada());
+	}
+    public PrintStream getPrintStream(String nombreArchivo) {
+        File archivo = new File(nombreArchivo);
+        PrintStream ps = null;
+        try {
+            FileOutputStream fos = new FileOutputStream(archivo, true);
+            ps = new PrintStream(fos);
+
+        } catch (FileNotFoundException fnfe) {
+            JOptionPane.showMessageDialog(null, "error");
+            
+        }
+        return ps;
     }
 
     public String getResumen() {

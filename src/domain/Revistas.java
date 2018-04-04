@@ -20,7 +20,7 @@ public class Revistas extends Catalogo {
 	 */
 	private String edicion;
 
-    public Revistas(String titulo, String fechaIngreso, Autores Autor,String codigoISSN,String edicion) {
+    public Revistas(String titulo, String fechaIngreso, String Autor,String codigoISSN,String edicion) {
         super(titulo, fechaIngreso, Autor);
         this.codigoISSN=codigoISSN;
         this.edicion=edicion;

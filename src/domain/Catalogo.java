@@ -16,7 +16,7 @@ public abstract class Catalogo {
     protected Revistas revistas;
     protected Tesis tesis;
     
-    public Catalogo(String titulo, String fechaIngreso, Autores Autor) {
+    public Catalogo(String titulo, String fechaIngreso,String Autor) {
     	this. titulo =  titulo;
         this.fechaIngreso = fechaIngreso;
         this.Autor=Autor;
@@ -40,11 +40,11 @@ public abstract class Catalogo {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public Autores getAutor() {
+    public String getAutor() {
         return Autor;
     }
 
-    public void setAutor(Autores Autor) {
+    public void setAutor(String Autor) {
         this.Autor = Autor;
     }
 	/**
@@ -58,5 +58,5 @@ public abstract class Catalogo {
 	/**
 	 * 
 	 */
-	private Autores Autor;
+	private String Autor;
 };

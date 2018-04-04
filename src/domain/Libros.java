@@ -5,6 +5,11 @@
 package domain;
 
 import domain.Catalogo;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import javax.swing.JOptionPane;
 
 /************************************************************/
 /**
@@ -47,8 +52,27 @@ public class Libros extends Catalogo {
     public void setSubtema(String subtema) {
         this.subtema = subtema;
     }
+    public void Agregar(Libros libros) {
+		// TODO Auto-generated method stub
+	 PrintStream ps = getPrintStream("Libros.txt");
 
-    public Libros(String titulo, String fechaIngreso, Autores Autor,String codigoISBN,String Tema,String subtema) {
+        ps.println(libros.getTitulo() + ";" + libros.getFechaIngreso()+ ";" + libros.getAutor()+ ";" + libros.getCodigoISBN() + ";" + libros.getTema()+";"+libros.getSubtema());
+	}
+    public PrintStream getPrintStream(String nombreArchivo) {
+        File archivo = new File(nombreArchivo);
+        PrintStream ps = null;
+        try {
+            FileOutputStream fos = new FileOutputStream(archivo, true);
+            ps = new PrintStream(fos);
+
+        } catch (FileNotFoundException fnfe) {
+            JOptionPane.showMessageDialog(null, "error");
+            
+        }
+        return ps;
+    }
+
+    public Libros(String titulo, String fechaIngreso, String Autor,String codigoISBN,String Tema,String subtema) {
         super(titulo, fechaIngreso, Autor);
         this.codigoISBN=codigoISBN;
         this.Tema=Tema;
